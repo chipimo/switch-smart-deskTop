@@ -482,13 +482,13 @@ const Accapp = (props) => {
               ) : null}
 
               {/* To remove ONLY FOR DEVELOPMENT */}
-              <Button
+              {/* <Button
                 onClick={() => {
                   history.push("/home");
                 }}
               >
                 <Typography>Main Menu</Typography>
-              </Button>
+              </Button> */}
 
               <div>
                 <div style={{ display: "flex" }}>
