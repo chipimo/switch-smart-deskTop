@@ -1,0 +1,78 @@
+.slim-header {
+  background-color: #212529;
+  border-bottom-width: 0; }
+  .slim-header.with-sidebar .slim-sidebar-menu {
+    border-color: rgba(255, 255, 255, 0.5); }
+    .slim-header.with-sidebar .slim-sidebar-menu span, .slim-header.with-sidebar .slim-sidebar-menu span::before, .slim-header.with-sidebar .slim-sidebar-menu span::after {
+      background-color: rgba(255, 255, 255, 0.5); }
+    .slim-header.with-sidebar .slim-sidebar-menu:hover, .slim-header.with-sidebar .slim-sidebar-menu:focus {
+      border-color: rgba(255, 255, 255, 0.75);
+      background-color: transparent; }
+      .slim-header.with-sidebar .slim-sidebar-menu:hover span, .slim-header.with-sidebar .slim-sidebar-menu:hover span::before, .slim-header.with-sidebar .slim-sidebar-menu:hover span::after, .slim-header.with-sidebar .slim-sidebar-menu:focus span, .slim-header.with-sidebar .slim-sidebar-menu:focus span::before, .slim-header.with-sidebar .slim-sidebar-menu:focus span::after {
+        background-color: rgba(255, 255, 255, 0.75); }
+
+.slim-logo a {
+  color: #fff;
+  font-weight: 500; }
+
+.search-box {
+  border-width: 0;
+  background-color: #fff; }
+  .search-box .btn {
+    background-color: #212529; }
+
+.logged-user {
+  color: rgba(255, 255, 255, 0.75); }
+  .logged-user:hover, .logged-user:focus {
+    color: #fff; }
+  .logged-user img {
+    border-color: rgba(255, 255, 255, 0.5); }
+
+.header-notification {
+  color: rgba(255, 255, 255, 0.75); }
+  .header-notification .indicator {
+    background-color: #dc3545; }
+  .header-notification:hover, .header-notification:focus {
+    background-color: #16181b;
+    color: #fff; }
+
+.slim-header-right .dropdown-a.show > a,
+.slim-header-right .dropdown-b.show > a {
+  background-color: #16181b; }
+
+.slim-header-right .dropdown-c.show > a {
+  color: #fff; }
+
+.slim-header-right .dropdown-menu {
+  margin-top: 17px; }
+
+.slim-navbar .nav-item .nav-link .icon {
+  color: #868ba1; }
+
+.slim-navbar .nav-item.active .nav-link {
+  background-image: none;
+  background-color: transparent;
+  color: #1b84e7;
+  border-width: 1px; }
+  .slim-navbar .nav-item.active .nav-link .icon {
+    color: #1b84e7; }
+
+.sidebar-label {
+  margin-bottom: 15px; }
+
+.sidebar-nav-link i {
+  color: #868ba1; }
+
+.sidebar-nav-link.active {
+  color: #1b84e7;
+  background-image: none;
+  background-color: transparent;
+  border-bottom-width: 1px; }
+  .sidebar-nav-link.active i {
+    color: #1b84e7; }
+
+.sidebar-nav-item:first-child .sidebar-nav-link.active {
+  border-top-width: 1px; }
+
+.sidebar-nav-sub .nav-sub-link.active {
+  color: #1b84e7; }

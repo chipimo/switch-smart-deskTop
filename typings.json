@@ -1,0 +1,12 @@
+{
+    "globalDependencies": {
+        "electron": "registry:env/electron#0.37.6+20160723033700",
+        "moment": "registry:dt/moment#2.8.0+20160316155526",
+        "moment-node":"registry:dt/moment-node#2.11.1+20160511043338",
+        "node": "registry:dt/node#6.0.0+2016021231320"
+    },
+    "devDependencies": {
+        "react": "registry:npm/react#16.0.1+20160601175240",
+        "react-dom": "registry:npm/react-dom#16.0.1+2016070521045"
+    }
+}

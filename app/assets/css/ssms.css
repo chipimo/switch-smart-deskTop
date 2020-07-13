@@ -1,0 +1,91 @@
+body {
+  -webkit-user-select: none;
+  cursor: default;
+  background-color: transparent !important;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+}
+
+.TopGbar {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}
+
+.toolbar-buttons {
+  -webkit-app-region: no-drag;
+}
+
+.tool-bar-buttons {
+  height: 35px;
+  width: 40px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ccc;
+}
+
+.tool-bar-buttons:hover {
+  background-color: rgba(175, 174, 174, 0.267);
+}
+
+.tool-bar-buttons:active {
+  outline: none;
+}
+
+.tool-bar-buttons:focus {
+  outline: none;
+}
+
+.tool-bar-help-buttons {
+  height: 35px;
+  width: 40px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ccc;
+}
+.tool-bar-help-buttons:hover {
+  background-color: rgb(105, 105, 105);
+}
+
+.tool-bar-help-buttons:active {
+  outline: none;
+}
+
+.tool-bar-help-buttons:focus {
+  outline: none;
+}
+
+.ml14 {
+  font-weight: 200;
+  font-size: 3.2em;
+}
+
+.ml14 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml14 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  transform-origin: 100% 100%;
+  bottom: 0;
+}
+
+.ml14 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+/* Main app */
+

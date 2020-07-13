@@ -1,0 +1,33 @@
+{
+  "dep": {
+    "config": {
+      "departments": {
+        "id": "4ade9571-6ab6-4150-83f3-e4b5f9574a78",
+        "dep": "Arcades Mall",
+        "file": "Arcades"
+      },
+      "theme": "light",
+      "admin": {
+        "pass": "1234",
+        "user": "Administrator"
+      },
+      "depInfo": {
+        "phone": "+260 975 30 30 30",
+        "shopNo": "",
+        "road": "",
+        "state": "",
+        "tpin": "100398315",
+        "taxType": "TPIN",
+        "taxRat": "16",
+        "association": ""
+      }
+    },
+    "created": {
+      "day": "Tuesday",
+      "month": "April",
+      "year": "2020",
+      "time": "4:55 AM"
+    },
+    "id": "mainApp"
+  }
+}

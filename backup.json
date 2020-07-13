@@ -1,0 +1,1718 @@
+{
+  "UpDates": [
+    {
+      "id": "3d2a99e0-4ae3-4d90-8842-91ddfc72daea",
+      "type": "products",
+      "props": {
+        "name": "test",
+        "group": {
+          "group": "Phones",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "1234",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": "3",
+            "price": "8000"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "adcf1bdd-7dbb-48e4-8522-ba2462080e7d",
+      "type": "products",
+      "props": {
+        "name": "I pad Pro Smart Key Board",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "888462815611",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "2100"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "eefc607a-0f9f-452f-ac6e-a6cee30a539e",
+      "type": "products",
+      "props": {
+        "name": "Apple Magic Mouse 2",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "1700"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "654ca4b3-2271-4199-bad7-1d776db18dc7",
+      "type": "products",
+      "props": {
+        "name": "Apple Pencil",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "888462786690",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "1700"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "cc6d38c2-fdf3-4276-8c77-ffdb4bbcc78b",
+      "type": "products",
+      "props": {
+        "name": "Apple Watch Megnetic Charging Cable",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "888462381871",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "1200"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "16a7e4ad-cb6f-4ab3-acd9-4d9861097649",
+      "type": "products",
+      "props": {
+        "name": "60w Mac Book Power Adapter",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "885909530045",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "1800"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "c00e14ef-df8b-4754-9e04-d009fb9da547",
+      "type": "products",
+      "props": {
+        "name": "45w MacBook Air Power Adapter",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "885909530038",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "1800"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "3637672e-7c1f-4d51-8c4e-95fc7c8f741a",
+      "type": "products",
+      "props": {
+        "name": "Apple Earpods Wireless",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "888462858502",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "3300"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "54ab6c03-47cb-431d-8e8d-af82bea1dbc3",
+      "type": "products",
+      "props": {
+        "name": "Apple Earpods with Connector",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "190198001696",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "700"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "c8148fb6-b316-400f-91f7-93a0b147aa27",
+      "type": "products",
+      "props": {
+        "name": "Apple Lightning Headphone Jack Adapter",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "190198001757",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "200"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "a250e60f-fecd-47b1-a7a7-ca52fb8627d1",
+      "type": "products",
+      "props": {
+        "name": "Apple 12w Power Adapter",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "885909650156",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "350"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "044ecd57-234a-4a58-8546-ac3006786822",
+      "type": "products",
+      "props": {
+        "name": "Apple Earpods Headphone",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "190198107077",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "500"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "da91e60a-07e7-41c0-a1ff-cb31c0446675",
+      "type": "products",
+      "props": {
+        "name": "42mm I watch Band",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "5013",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "500"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "84f5f348-0194-4dac-b24b-eb332ec48bef",
+      "type": "products",
+      "props": {
+        "name": "Airpods Leather Protective Case",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "5014",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "300"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "359cb8b7-cb7b-4cc7-9fec-65d6f6f4f50d",
+      "type": "products",
+      "props": {
+        "name": "I Phone X Charging Set",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "885909627332",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "400"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "e67d4142-005c-4190-a31e-9d8a8ddc6187",
+      "type": "products",
+      "props": {
+        "name": "Apple Earpods Pro",
+        "group": {
+          "group": "Apple Accessories",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "6000"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "e2f35ce4-69e9-4200-9fb0-ee7cec38bb5f",
+      "type": "products",
+      "props": {
+        "name": "Beats Pill Plus Bluetooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "888462537216",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "2700"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "b6bb5592-a1b1-4adc-bbfe-18dc2d18f72f",
+      "type": "products",
+      "props": {
+        "name": "Bose Sound Link Bluetooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "17817647199",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "2300"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "42288355-539c-4fe2-9aa2-4a3eac94cf32",
+      "type": "products",
+      "props": {
+        "name": "Bose Sound Link Revolve Bluethooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "17817754774",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "5600"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "8a8b10bc-2d4d-43f4-8e1e-47169c5e40f0",
+      "type": "products",
+      "props": {
+        "name": "Harman / Hardon Onyx Studio 4 Bluethooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "6925281926679",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "6600"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "ce2f47ce-5aad-4788-a64f-23567725d90e",
+      "type": "products",
+      "props": {
+        "name": "JBL Charge 3 Plus Bluetooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "6925281914201",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "2700"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "7cffe436-66f1-4f8d-9e59-931e3d184386",
+      "type": "products",
+      "props": {
+        "name": "JBL Flip 3 Bluetooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "6925281904424",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "1900"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "9ad2494f-0f6c-42c7-949f-02dae81ea87d",
+      "type": "products",
+      "props": {
+        "name": "JBL Flip 4 Bluetooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "6925281922435",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "2300"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "765811d6-4364-4b91-9ca3-0240b99d9b6a",
+      "type": "products",
+      "props": {
+        "name": "JBL Plalist By Harman  Bluethooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "6925281922206",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "4400"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "ea7b334d-8f6c-477e-b58d-1cb2ab88fd5c",
+      "type": "products",
+      "props": {
+        "name": "JBL Xtreme Bluetooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "6925281904592",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "4000"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "8382c82d-0443-46a6-b382-5bcfc457349a",
+      "type": "products",
+      "props": {
+        "name": "Nano Music Plus Bluetooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "4002",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "1100"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "c984f413-b509-466a-8fee-7b673c16f3db",
+      "type": "products",
+      "props": {
+        "name": "S8 Bluetooth Speaker ©",
+        "group": {
+          "group": "",
+          "colors": {}
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "950"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "7a9b5181-185a-463d-87a2-d658e1957726",
+      "type": "products",
+      "props": {
+        "name": "Sony Wireless Bluethoth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "27242860131",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "700"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "eb158989-3928-4c89-aff2-f63722652a8e",
+      "type": "products",
+      "props": {
+        "name": "Whale Bluetooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "6933342700090",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "750"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "69e5bed7-ee7a-48f8-a04b-292739303dad",
+      "type": "products",
+      "props": {
+        "name": "OMNI 50+ Bluetooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "6925281912191",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "5600"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "785bdff2-b0a7-4b9c-9c72-9ce16031e999",
+      "type": "products",
+      "props": {
+        "name": "JBL Boombox Bluethooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "6925281927430",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "6900"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "3d37e516-1c68-45ec-8a3e-135e45527990",
+      "type": "products",
+      "props": {
+        "name": "Harman Kardon Aura Studio 2 Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "6925281924712",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "5700"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "9f371754-101e-4f30-994d-a1c159c57565",
+      "type": "products",
+      "props": {
+        "name": "Amazon Echo Wifi Bluethooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "2500"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "8b964566-ce33-4ae7-86f0-0c369751ae3c",
+      "type": "products",
+      "props": {
+        "name": "Amazon Echo Dot Wifi Bluethooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "841667145402",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "1500"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "830aa2af-5d05-496c-a4d3-719f95675548",
+      "type": "products",
+      "props": {
+        "name": "JBL Flip 5 Bluetooth Speaker",
+        "group": {
+          "group": "Bluetooth Speaker ",
+          "colors": {
+            "backgroundColor": "#3b3b3b",
+            "textColor": "#fff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "2900"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "35fee19a-e4f2-45b3-a35c-82f367635288",
+      "type": "products",
+      "props": {
+        "name": "AUX Cable 1m",
+        "group": {
+          "group": "Cables & Connectors",
+          "colors": {
+            "backgroundColor": "#400040",
+            "textColor": "#ffffff"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "150"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "f1b891a0-a664-4842-a0c3-d14acab169aa",
+      "type": "products",
+      "props": {
+        "name": "test",
+        "group": {
+          "group": "Games PS4",
+          "colors": {
+            "backgroundColor": "#800000",
+            "textColor": "#f9f9f9"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "788"
+          },
+          {
+            "id": "input_1",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "8900"
+          },
+          {
+            "id": "input_2",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "900"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "acc2e76d-0d25-4a20-8062-e9c35a18b3d2",
+      "type": "products",
+      "props": {
+        "name": "test",
+        "group": {
+          "group": "group3",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "700"
+          },
+          {
+            "id": "input_1",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "900"
+          },
+          {
+            "id": "input_2",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "500"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "90103f10-b6ae-11ea-8ed1-a7cd6d0a3f13",
+      "type": "products",
+      "props": {
+        "name": "kkkk",
+        "group": {
+          "group": "group3",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "999"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "c28f3f90-ba96-11ea-a1d9-a50a1481a9e7",
+      "type": "products",
+      "props": {
+        "name": "product 33",
+        "group": {
+          "group": "group 2",
+          "colors": {
+            "textColor": "#ffffff",
+            "backgroundColor": "#ff0080"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "300"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "ced3a8e0-ba96-11ea-a1d9-a50a1481a9e7",
+      "type": "products",
+      "props": {
+        "name": "prodduct44",
+        "group": {
+          "group": "group 2",
+          "colors": {
+            "textColor": "#ffffff",
+            "backgroundColor": "#ff0080"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "800"
+          },
+          {
+            "id": "input_1",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "400"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "260aada0-c106-11ea-ac3e-d94c6ce0114c",
+      "type": "products",
+      "props": {
+        "name": "product 1",
+        "group": {
+          "group": "group 1",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "300"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "38e381e0-c106-11ea-ac3e-d94c6ce0114c",
+      "type": "products",
+      "props": {
+        "name": "product 3",
+        "group": {
+          "group": "group 1",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "800"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "72dac830-c4ef-11ea-b74a-051eb75ce38d",
+      "type": "products",
+      "props": {
+        "name": "hhh",
+        "group": {
+          "group": "group 3",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "800"
+          },
+          {
+            "id": "input_1",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "78"
+          },
+          {
+            "id": "input_2",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "566"
+          },
+          {
+            "id": "input_3",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "778"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "06697b40-c4f1-11ea-b74a-051eb75ce38d",
+      "type": "products",
+      "props": {
+        "name": "product 7",
+        "group": {
+          "group": "group 4",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "44"
+          },
+          {
+            "id": "input_1",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "444"
+          },
+          {
+            "id": "input_2",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "5555"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "4f3e0b10-c4f1-11ea-a4ea-53433881609d",
+      "type": "products",
+      "props": {
+        "name": "product 33",
+        "group": {
+          "group": "group t2",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "33"
+          },
+          {
+            "id": "input_1",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "444"
+          },
+          {
+            "id": "input_2",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "111"
+          },
+          {
+            "id": "input_3",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "444"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "ee0925f0-c4f5-11ea-af95-73b8d7299419",
+      "type": "products",
+      "props": {
+        "name": "product wwee",
+        "group": {
+          "group": "group errr",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "333"
+          },
+          {
+            "id": "input_1",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "3444"
+          },
+          {
+            "id": "input_2",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "666"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "c4f98ff0-c4f6-11ea-b9d4-97a74407393d",
+      "type": "products",
+      "props": {
+        "name": "iijh",
+        "group": {
+          "group": "group errr",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "333"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "103338e0-c4f7-11ea-88b6-eb25f1c7904c",
+      "type": "products",
+      "props": {
+        "name": "zzs",
+        "group": {
+          "group": "group errr",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "55"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "40b10290-c4f7-11ea-963e-bfa7ad688ddf",
+      "type": "products",
+      "props": {
+        "name": "aszz",
+        "group": {
+          "group": "group errr",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "900"
+          },
+          {
+            "id": "input_1",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "899"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    },
+    {
+      "id": "54f4b170-c4f7-11ea-963e-bfa7ad688ddf",
+      "type": "products",
+      "props": {
+        "name": "melvin",
+        "group": {
+          "group": "group t2",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "333"
+          },
+          {
+            "id": "input_1",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "3444"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
+    }
+  ]
+}

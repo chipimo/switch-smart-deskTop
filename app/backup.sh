@@ -1,0 +1,1 @@
+SET PGPASSWORD=root&&"C:/Program Files/PostgreSQL/12/bin/pg_dump" -U postgres -F t switch_smart > G:/project/melvins/post/${backup_file_ext}
