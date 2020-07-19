@@ -82,7 +82,7 @@ export const HandleReports = (props, dbhook, sendCallback) => {
                         .find({ year: year })
                         .assign({ months: yearList.months })
                         .value();
-                      tempdb.write().then(() => { });
+                      tempdb.write().then(() => {});
                     }
                   });
                 });
@@ -99,7 +99,7 @@ export const HandleReports = (props, dbhook, sendCallback) => {
                       .find({ year: year })
                       .assign({ months: yearList.months })
                       .value();
-                    tempdb.write().then(() => { });
+                    tempdb.write().then(() => {});
                   }
                 });
               }
@@ -152,23 +152,23 @@ export const HandleReports = (props, dbhook, sendCallback) => {
           RtxGrandTotal: props.isTaxInvoice
             ? props.data.GrandTotal
             : props.paymentType === "Credit Card"
-              ? props.data.GrandTotal
-              : props.data.RtxGrandTotal,
+            ? props.data.GrandTotal
+            : props.data.RtxGrandTotal,
           RtxAmountPaid: props.isTaxInvoice
             ? props.data.AmountPaid
             : props.paymentType === "Credit Card"
-              ? props.data.AmountPaid
-              : props.data.RtxAmountPaid,
+            ? props.data.AmountPaid
+            : props.data.RtxAmountPaid,
           RtxChangeDue: props.isTaxInvoice
             ? props.data.ChangeDue
             : props.paymentType === "Credit Card"
-              ? props.data.ChangeDue
-              : props.data.RtxChangeDue,
+            ? props.data.ChangeDue
+            : props.data.RtxChangeDue,
           RtxBalance: props.isTaxInvoice
             ? props.data.Balance
             : props.paymentType === "Credit Card"
-              ? props.data.Balance
-              : props.data.RtxBalance,
+            ? props.data.Balance
+            : props.data.RtxBalance,
           Discount: props.data.Discount,
           Date: props.data.Date,
           Datetrack: props.data.Datetrack,
@@ -180,6 +180,9 @@ export const HandleReports = (props, dbhook, sendCallback) => {
           totalTaxFinal: props.data.totalTaxFinal,
           totalTax: props.data.totalTax,
           time: props.data.time,
+          isBackedUp: configureStore.getState().SocketConn.isConn
+            ? true
+            : false,
         })
         .then(function () {
           dbhook
@@ -202,23 +205,23 @@ export const HandleReports = (props, dbhook, sendCallback) => {
                     RtxGrandTotal: props.isTaxInvoice
                       ? props.data.GrandTotal
                       : props.paymentType === "Credit Card"
-                        ? props.data.GrandTotal
-                        : props.data.RtxGrandTotal,
+                      ? props.data.GrandTotal
+                      : props.data.RtxGrandTotal,
                     RtxAmountPaid: props.isTaxInvoice
                       ? props.data.AmountPaid
                       : props.paymentType === "Credit Card"
-                        ? props.data.AmountPaid
-                        : props.data.RtxAmountPaid,
+                      ? props.data.AmountPaid
+                      : props.data.RtxAmountPaid,
                     RtxChangeDue: props.isTaxInvoice
                       ? props.data.ChangeDue
                       : props.paymentType === "Credit Card"
-                        ? props.data.ChangeDue
-                        : props.data.RtxChangeDue,
+                      ? props.data.ChangeDue
+                      : props.data.RtxChangeDue,
                     RtxBalance: props.isTaxInvoice
                       ? props.data.Balance
                       : props.paymentType === "Credit Card"
-                        ? props.data.Balance
-                        : props.data.RtxBalance,
+                      ? props.data.Balance
+                      : props.data.RtxBalance,
                     Discount: props.data.Discount,
                     Date: props.data.Date,
                     Datetrack: props.data.Datetrack,
@@ -226,8 +229,11 @@ export const HandleReports = (props, dbhook, sendCallback) => {
                     totalTaxFinal: props.data.totalTaxFinal,
                     totalTax: props.data.totalTax,
                     time: props.data.time,
+                    isBackedUp: configureStore.getState().SocketConn.isConn
+                      ? true
+                      : false,
                   })
-                  .then(function () { });
+                  .then(function () {});
               } else {
                 dbhook
                   .select()
@@ -250,23 +256,23 @@ export const HandleReports = (props, dbhook, sendCallback) => {
                           RtxGrandTotal: props.isTaxInvoice
                             ? props.data.GrandTotal + data[0].GrandTotal
                             : props.paymentType === "Credit Card"
-                              ? props.data.GrandTotal + data[0].GrandTotal
-                              : props.data.RtxGrandTotal + data[0].RtxGrandTotal,
+                            ? props.data.GrandTotal + data[0].GrandTotal
+                            : props.data.RtxGrandTotal + data[0].RtxGrandTotal,
                           RtxAmountPaid: props.isTaxInvoice
                             ? props.data.AmountPaid + data[0].AmountPaid
                             : props.paymentType === "Credit Card"
-                              ? props.data.AmountPaid + data[0].AmountPaid
-                              : props.data.RtxAmountPaid + data[0].RtxAmountPaid,
+                            ? props.data.AmountPaid + data[0].AmountPaid
+                            : props.data.RtxAmountPaid + data[0].RtxAmountPaid,
                           RtxChangeDue: props.isTaxInvoice
                             ? props.data.ChangeDue + data[0].ChangeDue
                             : props.paymentType === "Credit Card"
-                              ? props.data.ChangeDue + data[0].ChangeDue
-                              : props.data.RtxChangeDue + data[0].RtxChangeDue,
+                            ? props.data.ChangeDue + data[0].ChangeDue
+                            : props.data.RtxChangeDue + data[0].RtxChangeDue,
                           RtxBalance: props.isTaxInvoice
                             ? props.data.Balance + data[0].Balance
                             : props.paymentType === "Credit Card"
-                              ? props.data.Balance + data[0].Balance
-                              : props.data.RtxBalance + data[0].RtxBalance,
+                            ? props.data.Balance + data[0].Balance
+                            : props.data.RtxBalance + data[0].RtxBalance,
                           Discount: props.data.Discount + data[0].Discount,
                           totalTaxFinal:
                             props.data.totalTaxFinal +
@@ -274,7 +280,7 @@ export const HandleReports = (props, dbhook, sendCallback) => {
                           totalTax:
                             props.data.totalTax + Number(data[0].totalTax),
                         })
-                        .then(function () { });
+                        .then(function () {});
                     } else {
                       dbhook("sales_reports_totals")
                         .insert({
@@ -290,23 +296,23 @@ export const HandleReports = (props, dbhook, sendCallback) => {
                           RtxGrandTotal: props.isTaxInvoice
                             ? props.data.GrandTotal
                             : props.paymentType === "Credit Card"
-                              ? props.data.GrandTotal
-                              : props.data.RtxGrandTotal,
+                            ? props.data.GrandTotal
+                            : props.data.RtxGrandTotal,
                           RtxAmountPaid: props.isTaxInvoice
                             ? props.data.AmountPaid
                             : props.paymentType === "Credit Card"
-                              ? props.data.AmountPaid
-                              : props.data.RtxAmountPaid,
+                            ? props.data.AmountPaid
+                            : props.data.RtxAmountPaid,
                           RtxChangeDue: props.isTaxInvoice
                             ? props.data.ChangeDue
                             : props.paymentType === "Credit Card"
-                              ? props.data.ChangeDue
-                              : props.data.RtxChangeDue,
+                            ? props.data.ChangeDue
+                            : props.data.RtxChangeDue,
                           RtxBalance: props.isTaxInvoice
                             ? props.data.Balance
                             : props.paymentType === "Credit Card"
-                              ? props.data.Balance
-                              : props.data.RtxBalance,
+                            ? props.data.Balance
+                            : props.data.RtxBalance,
                           Discount: props.data.Discount,
                           Date: props.data.Date,
                           Datetrack: props.data.Datetrack,
@@ -314,8 +320,12 @@ export const HandleReports = (props, dbhook, sendCallback) => {
                           totalTaxFinal: props.data.totalTaxFinal,
                           totalTax: props.data.totalTax,
                           time: props.data.time,
+                          isBackedUp: configureStore.getState().SocketConn
+                            .isConn
+                            ? true
+                            : false,
                         })
-                        .then(function () { });
+                        .then(function () {});
                     }
                   });
               }
@@ -361,7 +371,6 @@ export const HandleReports = (props, dbhook, sendCallback) => {
         });
       break;
     case "get_sales_tickets":
-
       if (configureStore.getState().SocketConn.isConn)
         configureStore
           .getState()
@@ -377,6 +386,15 @@ export const HandleReports = (props, dbhook, sendCallback) => {
           });
         });
       break;
+    case "ServerBackup":
+      if (props.tabelId === "tikets")
+        dbhook("sales_reports_tikets")
+          .where({ id: props.id })
+          .update({
+            isBackedUp: true,
+          })
+          .then(function (data) {});
+
     default:
       break;
   }

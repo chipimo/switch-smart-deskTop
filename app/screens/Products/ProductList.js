@@ -245,7 +245,9 @@ var ProductListTable = function (props) {
         });
     };
     var UploadProduct = function () {
-        updater_1.default._runUpates(Syncstate, function (callback) { });
+        // console.log(Syncstate);
+        updater_1.default._SyncProduct(Syncstate, function (callback) {
+        });
     };
     var DeleteProductServer = function (data) {
         // console.log(data);
@@ -303,17 +305,10 @@ var ProductListTable = function (props) {
                                         React.createElement("div", { style: { display: "flex" } }, props.ProductSync.load ? (row.ItemName === props.ProductSync.item ? (React.createElement("div", { style: { display: "flex" } },
                                             React.createElement(semantic_ui_react_1.Icon, { name: "sync", loading: true }),
                                             React.createElement("span", { style: { marginLeft: 2 } }, "Syncing..."))) : (React.createElement("div", null, row.sync ? (React.createElement("div", { style: { display: "flex" } },
-                                            React.createElement(core_1.IconButton
-                                            // onClick={() => {
-                                            //   handleClick2(event, row);
-                                            //   setSyncState(row);
-                                            // }}
-                                            , { 
-                                                // onClick={() => {
-                                                //   handleClick2(event, row);
-                                                //   setSyncState(row);
-                                                // }}
-                                                size: "small" },
+                                            React.createElement(core_1.IconButton, { onClick: function () {
+                                                    handleClick2(event, row);
+                                                    setSyncState(row);
+                                                }, size: "small" },
                                                 React.createElement(CheckCircle_1.default, { style: { color: "#2FB543" } })),
                                             React.createElement("span", { style: {
                                                     marginLeft: 2,

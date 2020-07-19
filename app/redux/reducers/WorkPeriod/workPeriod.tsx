@@ -85,3 +85,13 @@ export const WorkPeriodList = (dbhook, sendCallback) => {
       sendCallback(data.reverse());
     });
 };
+
+export const UpdateWorkPeriodTime = (props,dbhook, sendCallback) => {
+  console.log(props);
+  
+  // dbhook("work_period")
+  // .update({})
+  //   .then(function (data) {
+  //     sendCallback(data.reverse());
+  //   });
+};

@@ -24,8 +24,6 @@ var styles_1 = require("@material-ui/core/styles");
 var core_1 = require("@material-ui/core");
 var OpenWithOutlined_1 = require("@material-ui/icons/OpenWithOutlined");
 var dataBase_1 = require("../../redux/dataBase");
-var react_toastify_1 = require("react-toastify");
-var updater_1 = require("../../redux/dataBase/updater");
 var semantic_ui_react_1 = require("semantic-ui-react");
 var Currency = require("react-currency-formatter");
 var useStyles = styles_1.makeStyles(function (theme) { return ({
@@ -105,27 +103,21 @@ var index = function (props) {
     var _b = React.useState(10), rowsPerPage = _b[0], setRowsPerPage = _b[1];
     var _c = React.useState(), selectedId = _c[0], setSelectedId = _c[1];
     var _d = React.useState(), selected = _d[0], setSelected = _d[1];
-    var _e = React.useState(false), openNewProduct = _e[0], setopenNewProduct = _e[1];
+    var _e = React.useState(false), setopenNewProduct = _e[1];
     var _f = React.useState({
         rows: [],
     }), state = _f[0], setState = _f[1];
-    var _g = React.useState({}), Syncstate = _g[0], setSyncState = _g[1];
+    var _g = React.useState({});
     var _h = React.useState(initialState), menustate = _h[0], setMenuState = _h[1];
-    var _j = React.useState(initialState2), menustate2 = _j[0], setMenuState2 = _j[1];
+    var _j = React.useState(initialState2);
     var _k = React.useState([]), multi = _k[0], SetMulti = _k[1];
     var _l = React.useState(false), isMulti = _l[0], setisMulti = _l[1];
     var _m = React.useState(false), OpenProductList = _m[0], setOpenProductList = _m[1];
     var handleChangePage = function (event, newPage) {
         setPage(newPage);
     };
-    var _o = React.useState(false), open = _o[0], setOpen = _o[1];
-    var _p = React.useState(false), LoadingData = _p[0], setLoadingData = _p[1];
-    var handleDailogClickOpen = function () {
-        setOpen(true);
-    };
-    var handleDailogClose = function () {
-        setOpen(false);
-    };
+    var _o = React.useState(false), setOpen = _o[1];
+    var LoadingData = React.useState(false)[0];
     var handleChangeRowsPerPage = function (event) {
         setRowsPerPage(+event.target.value);
         setPage(0);
@@ -141,7 +133,7 @@ var index = function (props) {
         }
         else if (props.Model.toClose === "LoadServer_all_products") {
             props.dispatchEvent({ type: "HANDELCLEAR" });
-            dataBase_1.default.HandelProducts({ _type: "getServerProducts" }, function (receiveCallback) {
+            dataBase_1.default.HandelProducts({ _type: "getServerProducts" }, function () {
                 setTimeout(function () { }, 100);
             });
         }
@@ -153,25 +145,15 @@ var index = function (props) {
             }, 100);
         });
     }, [props]);
-    var handleClick = function (event, data) {
+    var handleClick = function (event) {
         event.preventDefault();
         setMenuState({
             mouseX: event.clientX - 2,
             mouseY: event.clientY - 4,
         });
     };
-    var handleClick2 = function (event, data) {
-        event.preventDefault();
-        setMenuState2({
-            mouseX: event.clientX - 2,
-            mouseY: event.clientY - 4,
-        });
-    };
     var handleClose = function () {
         setMenuState(initialState);
-    };
-    var handleCloseSync = function () {
-        setMenuState2(initialState2);
     };
     var handleOpenMulti = function () {
         dataBase_1.default.HandelProducts({ _type: "getPOSList", layoutType: "mulitList", name: selected.ItemName }, function (receiveCallback) {
@@ -192,57 +174,13 @@ var index = function (props) {
     var HandelOpenProductList = function () {
         setOpenProductList(true);
     };
-    var HandelAddToInventory = function () {
-        var purchaseSelected = [selected];
-        var data = {
-            _type: "add_to_store",
-            purchaseSelected: purchaseSelected,
-            dep: props.Dep.dep,
-        };
-        dataBase_1.default.HandelProducts(data, function (reciveCallback) {
-            react_toastify_1.toast("Successfully Purchased " + (reciveCallback.data.number === 1
-                ? reciveCallback.data.name
-                : reciveCallback.data.number + " Products") + " ", {
-                position: "top-right",
-                autoClose: 5000,
-                type: "success",
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        });
-    };
-    var HandelDelete = function (serverdelete) {
-        handleDailogClose();
-        dataBase_1.default.HandelProducts({ _type: "delete", serverdelete: serverdelete, selected: selected }, function (callback) {
-            props.dispatchEvent({ type: "LOADTABEL" });
-            react_toastify_1.toast("Successfully Purchased Successfully Deleted " + callback.name, {
-                position: "top-right",
-                autoClose: 5000,
-                type: "success",
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-            handleClose();
-        });
-    };
-    var UploadProduct = function () {
-        console.log(Syncstate);
-        updater_1.default._runUpates(Syncstate, function (callback) { });
-    };
-    var DeleteProductServer = function (data) {
-        console.log(data);
-    };
     return (React.createElement("div", { style: {
             width: "100%",
             height: "85vh",
             overflow: "auto",
         } },
+        React.createElement("div", { style: { width: "100%", padding: 20 } },
+            React.createElement(core_1.Button, { variant: "contained", color: "primary" }, "Print Out")),
         React.createElement(core_1.Paper, { className: classes.root },
             React.createElement(semantic_ui_react_1.Loader, { active: LoadingData }, "Loading Data From Server..."),
             React.createElement(TableContainer_1.default, { className: classes.container },

@@ -152,7 +152,7 @@ function createWindow() {
 }
 // IPC Render
 ipcMain.on("do_print_receipt", function (event, arg) {
-    console.log(arg); // prints "ping"
+    // console.log(arg); // prints "ping"
     event.reply("asynchronous-reply", "pong");
     // Printer(arg);
 });

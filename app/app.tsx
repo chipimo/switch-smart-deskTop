@@ -27,24 +27,23 @@ import appDb from "./redux/dataBase";
 import Drawer from "@material-ui/core/Drawer";
 import Dep_Notifications from "./screens/Departments/Dep_Notifications";
 import Backup from "./redux/dataBase/updater";
-import { ToastContainer, toast } from "react-toastify";   
+import { ToastContainer, toast } from "react-toastify";
 
 import { remote } from "electron";
 const electron = require("electron");
 const mainWindow = remote.getCurrentWindow();
 
 const socketIOClient = require("socket.io-client");
-const moment = require("moment");    
-// const socketUrl = "http://localhost:3200";
-const socketUrl = "https://switch-smart.herokuapp.com/";
+const moment = require("moment");
+const socketUrl = "http://localhost:3200";
+// const socketUrl = "https://switch-smart.herokuapp.com/";
 
 // Moment valz
 var date = new Date();
-var check = moment(date);  
+var check = moment(date);
 var day = check.format("dddd"); // => ('Monday' , 'Tuesday' ----)
 var month = check.format("MMMM"); // => ('January','February ----)
 var year = check.format("YYYY");
-
 
 // Theme layout
 const darkTheme = createMuiTheme({
@@ -81,6 +80,7 @@ const Accapp = (props) => {
     bottom2: false,
     right: false,
   });
+  const [LoadOnce, setLoadOnce] = React.useState(true);
 
   const history = useHistory();
 
@@ -95,49 +95,55 @@ const Accapp = (props) => {
   };
 
   React.useEffect(() => {
-    mainWindow.maximize();
+    if (LoadOnce) {
+      setLoadOnce(false);
 
-    setTimeout(() => {
-      initiSocket();
-    }, 3000);
+      mainWindow.maximize();
 
-    appDb.HandleTheme({ _type: "getTheme" }, (callback) => {
-      props.dispatchEvent({ type: "Theme", theme: 'light' });
-    });
+      setTimeout(() => {
+        initiSocket();
+      }, 3000);
 
-    appDb.HandleWorkperiods({ _type: "loadList" }, (recivedCallback) => {
-      if (recivedCallback)
-        recivedCallback.map((list) => {
-          if (list.dateEnded === "") {
-            var initalData = {
-              type: "STARTWORKPERIOD",
-              id: list.id,
-              dateStarted: list.dateStarted,
-              dateStartedString: list.dateStartedString,
-              date: list.date,
-              time: list.time,
-              timeEnded: list.timeEnded,
-              dateEnded: list.dateEnded,
-              dateEndedString: list.dateEndedString,
-              note: list.note,
-              userId: list.userId,
-              department: list.department,
-              departmentInfo: list.departmentInfo,
-              workedFor: list.workedFor,
-              year: list.year,
-              month: list.month,
-              week: list.week,
-              day: list.day,
-            };
-            props.dispatchEvent(initalData);
-          }
-        });
-
-      props.dispatchEvent({
-        type: "SETWORKPERIOD",
-        data: recivedCallback,
+      appDb.HandleTheme({ _type: "getTheme" }, (callback) => {
+        props.dispatchEvent({ type: "Theme", theme: "light" });
       });
-    });
+
+      appDb.HandleWorkperiods({ _type: "loadList" }, (recivedCallback) => {
+        if (recivedCallback)
+          recivedCallback.map((list) => {
+            if (list.dateEnded === "") {
+              var initalData = {
+                type: "STARTWORKPERIOD",
+                id: list.id,
+                dateStarted: list.dateStarted,
+                dateStartedString: list.dateStartedString,
+                date: list.date,
+                time: list.time,
+                timeEnded: list.timeEnded,
+                dateEnded: list.dateEnded,
+                dateEndedString: list.dateEndedString,
+                note: list.note,
+                userId: list.userId,
+                department: list.department,
+                departmentInfo: list.departmentInfo,
+                workedFor: list.workedFor,
+                year: list.year,
+                month: list.month,
+                week: list.week,
+                day: list.day,
+              };
+              props.dispatchEvent(initalData);
+            }
+          });
+
+        props.dispatchEvent({
+          type: "SETWORKPERIOD",
+          data: recivedCallback,
+        });
+      });
+    }
+
+    // console.log(props.Updater);
   }, []);
 
   const initiSocket = () => {
@@ -158,7 +164,7 @@ const Accapp = (props) => {
     socket.on("SALESREPORTLIST", (callback) => {
       // console.log(callback);
     });
-    
+
     socket.on("disconnect", () => {
       props.dispatchEvent({ type: "CONNCETIONFAILED" });
     });
@@ -309,7 +315,7 @@ const Accapp = (props) => {
         <Paper
           style={{
             width: "100vw",
-            height: "90.5vh", 
+            height: "90.5vh",
           }}
         >
           <Route path="/" exact component={LoginPage} />
@@ -482,13 +488,13 @@ const Accapp = (props) => {
               ) : null}
 
               {/* To remove ONLY FOR DEVELOPMENT */}
-              {/* <Button
+              <Button
                 onClick={() => {
                   history.push("/home");
                 }}
               >
                 <Typography>Main Menu</Typography>
-              </Button> */}
+              </Button>
 
               <div>
                 <div style={{ display: "flex" }}>
@@ -536,6 +542,7 @@ function mapStateToProps(state) {
     User: state.User,
     Dep: state.Dep,
     WorkPeriod: state.WorkPeriod,
+    Updater: state.Updater,
   };
 }
 

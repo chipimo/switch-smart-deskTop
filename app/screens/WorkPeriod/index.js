@@ -73,15 +73,17 @@ exports.index = function (props) {
                 data: recivedCallback,
             });
         });
-        if (props.WorkPeriod.isStarted) {
-            var now = moment(moment().format());
-            var started = moment(props.WorkPeriod.date);
-            var diff = now.diff(started);
-            var diffDuration = moment.duration(diff);
-            setDay(diffDuration.days());
-            setHours(diffDuration.hours());
-            setMinutes(diffDuration.minutes());
-        }
+        setInterval(function () {
+            if (props.WorkPeriod.isStarted) {
+                var now = moment(moment().format());
+                var started = moment(props.WorkPeriod.date);
+                var diff = now.diff(started);
+                var diffDuration = moment.duration(diff);
+                setDay(diffDuration.days());
+                setHours(diffDuration.hours());
+                setMinutes(diffDuration.minutes());
+            }
+        }, 60 * 1000);
     }, []);
     var HandleEndWorkPeriod = function () {
         var check = moment(new Date());
@@ -121,8 +123,7 @@ exports.index = function (props) {
                             data: recivedCallback,
                         });
                         setTimeout(function () {
-                            backupFunc_1.socketStream(function (BackupCallback) {
-                            });
+                            backupFunc_1.socketStream(function (BackupCallback) { });
                             alert("Work Period ends. Vist Reports section and create Work Period Reports");
                         }, 200);
                     });

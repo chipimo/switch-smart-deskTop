@@ -135,6 +135,7 @@ exports.up = function (knex) {
         table.decimal("totalTaxFinal").notNullable();
         table.decimal("totalTax").notNullable();
         table.string("time").notNullable();
+        table.boolean("isBackedUp").notNullable();
         table.timestamp("timestamp").defaultTo(knex.fn.now());
         table.timestamp("modified").defaultTo(knex.fn.now());
       })
@@ -160,9 +161,11 @@ exports.up = function (knex) {
         table.string("totalTaxFinal").notNullable();
         table.string("totalTax").notNullable();
         table.string("time").notNullable();
+        table.boolean("isBackedUp").notNullable();
         table.timestamp("timestamp").defaultTo(knex.fn.now());
         table.timestamp("modified").defaultTo(knex.fn.now());
       })
+      
       .createTable("purchases_reports", function (table) {
         table.increments("key");
         table.string("id").notNullable();

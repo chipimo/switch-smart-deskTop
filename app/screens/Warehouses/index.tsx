@@ -20,11 +20,10 @@ import {
   ListItemText,
   ListSubheader,
   Checkbox,
+  Button,
 } from "@material-ui/core";
 import OpenIcon from "@material-ui/icons/OpenWithOutlined";
 import appDb from "../../redux/dataBase";
-import { toast } from "react-toastify";
-import Backup from "../../redux/dataBase/updater";
 import { Loader } from "semantic-ui-react";
 
 const Currency = require("react-currency-formatter");
@@ -111,13 +110,13 @@ const index = (props) => {
   const [selectedId, setSelectedId] = React.useState();
   const [selected, setSelected] = React.useState();
 
-  const [openNewProduct, setopenNewProduct] = React.useState(false);
+  const [, setopenNewProduct] = React.useState(false);
   const [state, setState] = React.useState({
     rows: [],
   });
-  const [Syncstate, setSyncState] = React.useState({});
+  const [] = React.useState({});
   const [menustate, setMenuState] = React.useState(initialState);
-  const [menustate2, setMenuState2] = React.useState(initialState2);
+  const [] = React.useState(initialState2);
 
   const [multi, SetMulti] = React.useState([]);
   const [isMulti, setisMulti] = React.useState(false);
@@ -127,16 +126,8 @@ const index = (props) => {
     setPage(newPage);
   };
 
-  const [open, setOpen] = React.useState(false);
-  const [LoadingData, setLoadingData] = React.useState(false);
-
-  const handleDailogClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDailogClose = () => {
-    setOpen(false);
-  };
+  const [, setOpen] = React.useState(false);
+  const [LoadingData] = React.useState(false);
 
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);
@@ -152,12 +143,9 @@ const index = (props) => {
       props.dispatchEvent({ type: "CLEARLOADTABEL" });
     } else if (props.Model.toClose === "LoadServer_all_products") {
       props.dispatchEvent({ type: "HANDELCLEAR" });
-      appDb.HandelProducts(
-        { _type: "getServerProducts" },
-        (receiveCallback) => {
-          setTimeout(() => {}, 100);
-        }
-      );
+      appDb.HandelProducts({ _type: "getServerProducts" }, () => {
+        setTimeout(() => {}, 100);
+      });
     }
     appDb.HandelProducts(
       { _type: "getPOSList", layoutType: "all_purcheased" },
@@ -170,7 +158,7 @@ const index = (props) => {
     );
   }, [props]);
 
-  const handleClick = (event, data) => {
+  const handleClick = (event) => {
     event.preventDefault();
     setMenuState({
       mouseX: event.clientX - 2,
@@ -178,20 +166,8 @@ const index = (props) => {
     });
   };
 
-  const handleClick2 = (event, data) => {
-    event.preventDefault();
-    setMenuState2({
-      mouseX: event.clientX - 2,
-      mouseY: event.clientY - 4,
-    });
-  };
-
   const handleClose = () => {
     setMenuState(initialState);
-  };
-
-  const handleCloseSync = () => {
-    setMenuState2(initialState2);
   };
 
   const handleOpenMulti = () => {
@@ -220,67 +196,6 @@ const index = (props) => {
     setOpenProductList(true);
   };
 
-  const HandelAddToInventory = () => {
-    var purchaseSelected = [selected];
-    var data = {
-      _type: "add_to_store",
-      purchaseSelected,
-      dep: props.Dep.dep,
-    };
-
-    appDb.HandelProducts(data, (reciveCallback) => {
-      toast(
-        `Successfully Purchased ${
-          reciveCallback.data.number === 1
-            ? reciveCallback.data.name
-            : reciveCallback.data.number + " Products"
-        } `,
-        {
-          position: "top-right",
-          autoClose: 5000,
-          type: "success",
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        }
-      );
-    });
-  };
-
-  const HandelDelete = (serverdelete) => {
-    handleDailogClose();
-    appDb.HandelProducts(
-      { _type: "delete", serverdelete, selected },
-      (callback) => {
-        props.dispatchEvent({ type: "LOADTABEL" });
-
-        toast(`Successfully Purchased Successfully Deleted ${callback.name}`, {
-          position: "top-right",
-          autoClose: 5000,
-          type: "success",
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
-        handleClose();
-      }
-    );
-  };
-
-  const UploadProduct = () => {
-    console.log(Syncstate);
-
-    Backup._runUpates(Syncstate, (callback) => {});
-  };
-
-  const DeleteProductServer = (data) => {
-    console.log(data);
-  };
-
   return (
     <div
       style={{
@@ -289,6 +204,11 @@ const index = (props) => {
         overflow: "auto",
       }}
     >
+      <div style={{ width: "100%", padding: 20 }}>
+        <Button variant="contained" color="primary">
+          Print Out
+        </Button>
+      </div>
       <Paper className={classes.root}>
         <Loader active={LoadingData}>Loading Data From Server...</Loader>
         <TableContainer className={classes.container}>
@@ -407,7 +327,7 @@ const index = (props) => {
           onChangePage={handleChangePage}
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
-     
+
         <Menu
           keepMounted
           open={menustate.mouseY !== null}

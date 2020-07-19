@@ -47,7 +47,8 @@ var SocketIds = [];
 function CreateId() {
     return uuidv1();
 }
-var GetData = function (props, hook, callback) {
+exports.GetData = function (props, hook, callback) {
+    // console.log(props);
     hook
         .select()
         .from(props.table)
@@ -77,7 +78,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
             var productKey = CreateId();
             if (props.portion.length !== 1)
                 isMulity = true;
-            GetData({ table: "Tabs", id: "tabname", value: props.group.group }, dbhook, function (Tabcallback) {
+            exports.GetData({ table: "Tabs", id: "tabname", value: props.group.group }, dbhook, function (Tabcallback) {
                 // console.log(Tabcallback.data[0].isTaxEnabled);
                 if (Tabcallback.data.length === 0) {
                     dbhook("Tabs")
@@ -88,93 +89,180 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                         color: props.group.colors.textColor,
                         buttonType: "default",
                         isInstore: false,
-                        isTaxEnabled: Tabcallback.data[0].isTaxEnabled,
+                        isTaxEnabled: true,
                     })
-                        .then(function () { });
-                }
-                GetData({ table: "products", id: "ItemName", value: props.name }, dbhook, function (callback) { return __awaiter(_this, void 0, void 0, function () {
-                    return __generator(this, function (_a) {
-                        if (callback.data.length === 0) {
-                            dbhook("products")
-                                .insert({
-                                productKey: uuidv1(),
-                                group: props.group.group,
-                                category: recipe,
-                                ItemName: props.name,
-                                barcode1: props.portion.length !== 1
-                                    ? ""
-                                    : props.portion[0].barcode1,
-                                barcode2: props.portion.length !== 1
-                                    ? ""
-                                    : props.portion[0].barcode2,
-                                barcode3: props.portion.length !== 1
-                                    ? ""
-                                    : props.portion[0].barcode3,
-                                barcode4: props.portion.length !== 1
-                                    ? ""
-                                    : props.portion[0].barcode4,
-                                barcode5: props.portion.length !== 1
-                                    ? ""
-                                    : props.portion[0].barcode5,
-                                sallingprice: isMulity ? 0 : props.portion[0].price,
-                                initalPrice: isMulity ? 0 : props.portion[0].price,
-                                qnt: 1,
-                                multiplier: 0,
-                                alertOut: isMulity ? 0 : props.portion[0].alertOut,
-                                amountInstore: 0,
-                                sync: false,
-                                isInstore: false,
-                                isTaxEnabled: Tabcallback.data[0].isTaxEnabled,
-                                isMulity: isMulity,
-                            })
-                                .then(function () {
-                                if (isMulity) {
-                                    props.portion.map(function (data) {
-                                        dbhook("mulitProducts")
-                                            .insert({
-                                            id: uuidv1(),
-                                            productName: props.name,
-                                            sallingprice: parseInt(data.price),
-                                            initalPrice: parseInt(data.price),
-                                            qnt: 1,
-                                            barcode1: data.barcode1,
-                                            barcode2: data.barcode2,
-                                            barcode3: data.barcode3,
-                                            barcode4: data.barcode4,
-                                            barcode5: data.barcode5,
-                                            alertOut: parseInt(data.alertOut),
-                                            amountInstore: 0,
-                                            isInstore: false,
-                                            isTaxEnabled: Tabcallback.data[0].isTaxEnabled,
-                                        })
-                                            .then(function (result) {
-                                            // console.log(result);
-                                        })
-                                            .catch(function (err) {
-                                            // console.log(err);
-                                        });
-                                    });
-                                    sendCallback({
-                                        isSet: true,
-                                        productKey: productKey,
-                                        type: "add",
+                        .then(function () {
+                        var _this = this;
+                        exports.GetData({ table: "products", id: "ItemName", value: props.name }, dbhook, function (callback) { return __awaiter(_this, void 0, void 0, function () {
+                            return __generator(this, function (_a) {
+                                if (callback.data.length === 0) {
+                                    dbhook("products")
+                                        .insert({
+                                        productKey: uuidv1(),
+                                        group: props.group.group,
+                                        category: recipe,
+                                        ItemName: props.name,
+                                        barcode1: props.portion.length !== 1
+                                            ? ""
+                                            : props.portion[0].barcode1,
+                                        barcode2: props.portion.length !== 1
+                                            ? ""
+                                            : props.portion[0].barcode2,
+                                        barcode3: props.portion.length !== 1
+                                            ? ""
+                                            : props.portion[0].barcode3,
+                                        barcode4: props.portion.length !== 1
+                                            ? ""
+                                            : props.portion[0].barcode4,
+                                        barcode5: props.portion.length !== 1
+                                            ? ""
+                                            : props.portion[0].barcode5,
+                                        sallingprice: isMulity ? 0 : props.portion[0].price,
+                                        initalPrice: isMulity ? 0 : props.portion[0].price,
+                                        qnt: 1,
+                                        multiplier: 0,
+                                        alertOut: isMulity ? 0 : props.portion[0].alertOut,
+                                        amountInstore: 0,
+                                        sync: false,
+                                        isInstore: false,
+                                        isTaxEnabled: true,
+                                        isMulity: isMulity,
+                                    })
+                                        .then(function () {
+                                        if (isMulity) {
+                                            props.portion.map(function (data) {
+                                                dbhook("mulitProducts")
+                                                    .insert({
+                                                    id: uuidv1(),
+                                                    productName: props.name,
+                                                    sallingprice: parseInt(data.price),
+                                                    initalPrice: parseInt(data.price),
+                                                    qnt: 1,
+                                                    barcode1: data.barcode1,
+                                                    barcode2: data.barcode2,
+                                                    barcode3: data.barcode3,
+                                                    barcode4: data.barcode4,
+                                                    barcode5: data.barcode5,
+                                                    alertOut: parseInt(data.alertOut),
+                                                    amountInstore: 0,
+                                                    isInstore: false,
+                                                    isTaxEnabled: true,
+                                                })
+                                                    .then(function (result) {
+                                                    // console.log(result);
+                                                })
+                                                    .catch(function (err) {
+                                                    // console.log(err);
+                                                });
+                                            });
+                                            sendCallback({
+                                                isSet: true,
+                                                productKey: productKey,
+                                                type: "add",
+                                            });
+                                        }
+                                        else {
+                                            sendCallback({
+                                                isSet: true,
+                                                productKey: productKey,
+                                                type: "add",
+                                            });
+                                        }
                                     });
                                 }
                                 else {
-                                    sendCallback({
-                                        isSet: true,
-                                        productKey: productKey,
-                                        type: "add",
-                                    });
+                                    alert("This Product already exist");
                                 }
+                                return [2 /*return*/];
                             });
-                        }
-                        else {
-                            alert("This Product already exist");
-                        }
-                        return [2 /*return*/];
+                        }); });
                     });
-                }); });
+                }
+                else {
+                    exports.GetData({ table: "products", id: "ItemName", value: props.name }, dbhook, function (callback) { return __awaiter(_this, void 0, void 0, function () {
+                        return __generator(this, function (_a) {
+                            if (callback.data.length === 0) {
+                                dbhook("products")
+                                    .insert({
+                                    productKey: uuidv1(),
+                                    group: props.group.group,
+                                    category: recipe,
+                                    ItemName: props.name,
+                                    barcode1: props.portion.length !== 1
+                                        ? ""
+                                        : props.portion[0].barcode1,
+                                    barcode2: props.portion.length !== 1
+                                        ? ""
+                                        : props.portion[0].barcode2,
+                                    barcode3: props.portion.length !== 1
+                                        ? ""
+                                        : props.portion[0].barcode3,
+                                    barcode4: props.portion.length !== 1
+                                        ? ""
+                                        : props.portion[0].barcode4,
+                                    barcode5: props.portion.length !== 1
+                                        ? ""
+                                        : props.portion[0].barcode5,
+                                    sallingprice: isMulity ? 0 : props.portion[0].price,
+                                    initalPrice: isMulity ? 0 : props.portion[0].price,
+                                    qnt: 1,
+                                    multiplier: 0,
+                                    alertOut: isMulity ? 0 : props.portion[0].alertOut,
+                                    amountInstore: 0,
+                                    sync: false,
+                                    isInstore: false,
+                                    isTaxEnabled: Tabcallback.data[0].isTaxEnabled,
+                                    isMulity: isMulity,
+                                })
+                                    .then(function () {
+                                    if (isMulity) {
+                                        props.portion.map(function (data) {
+                                            dbhook("mulitProducts")
+                                                .insert({
+                                                id: uuidv1(),
+                                                productName: props.name,
+                                                sallingprice: parseInt(data.price),
+                                                initalPrice: parseInt(data.price),
+                                                qnt: 1,
+                                                barcode1: data.barcode1,
+                                                barcode2: data.barcode2,
+                                                barcode3: data.barcode3,
+                                                barcode4: data.barcode4,
+                                                barcode5: data.barcode5,
+                                                alertOut: parseInt(data.alertOut),
+                                                amountInstore: 0,
+                                                isInstore: false,
+                                                isTaxEnabled: Tabcallback.data[0].isTaxEnabled,
+                                            })
+                                                .then(function (result) {
+                                                // console.log(result);
+                                            })
+                                                .catch(function (err) {
+                                                // console.log(err);
+                                            });
+                                        });
+                                        sendCallback({
+                                            isSet: true,
+                                            productKey: productKey,
+                                            type: "add",
+                                        });
+                                    }
+                                    else {
+                                        sendCallback({
+                                            isSet: true,
+                                            productKey: productKey,
+                                            type: "add",
+                                        });
+                                    }
+                                });
+                            }
+                            else {
+                                // alert("This Product already exist");
+                            }
+                            return [2 /*return*/];
+                        });
+                    }); });
+                }
             });
             break;
         case "sync":
@@ -192,7 +280,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
             if (SocketIds.length === 0) {
                 SocketIds.push(socketId);
                 alltabs.map(function (tab) {
-                    GetData({ table: "Tabs", id: "tabname", value: tab.tabname }, dbhook, function (callback) {
+                    exports.GetData({ table: "Tabs", id: "tabname", value: tab.tabname }, dbhook, function (callback) {
                         if (callback.data.length === 0) {
                             dbhook("Tabs")
                                 .insert({
@@ -209,7 +297,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                     });
                 });
                 allproductsList.map(function (productsList) {
-                    GetData({
+                    exports.GetData({
                         table: "products",
                         id: "ItemName",
                         value: productsList.ItemName,
@@ -242,7 +330,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                     });
                 });
                 allmulitList.map(function (multiproductsList) {
-                    GetData({
+                    exports.GetData({
                         table: "mulitProducts",
                         id: "productName",
                         value: multiproductsList.productName,
@@ -310,7 +398,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
             break;
         case "invReduction":
             // console.log(props);
-            GetData({
+            exports.GetData({
                 table: "products",
                 id: "ItemName",
                 value: props.data.selectedItem.ItemName,
@@ -425,7 +513,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                                         productsList = [];
                                         proList = tabs.map(function (list) { return __awaiter(_this, void 0, void 0, function () {
                                             return __generator(this, function (_a) {
-                                                GetData({
+                                                exports.GetData({
                                                     table: "products",
                                                     id: "group",
                                                     value: list.tabname,
@@ -650,12 +738,12 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                         isTaxEnabled: false,
                     })
                         .then(function (data) {
-                        GetData({
+                        exports.GetData({
                             table: "products",
                             id: "group",
                             value: list.tabname,
                         }, dbhook, function (reciveCallback) {
-                            GetData({
+                            exports.GetData({
                                 table: "mulitProducts",
                                 id: "productName",
                                 value: reciveCallback.data[0].ItemName,
@@ -669,8 +757,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                                         .update({
                                         isTaxEnabled: false,
                                     })
-                                        .then(function (data) {
-                                    });
+                                        .then(function (data) { });
                                 });
                             });
                         });
@@ -697,12 +784,12 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                         isTaxEnabled: true,
                     })
                         .then(function (data) {
-                        GetData({
+                        exports.GetData({
                             table: "products",
                             id: "group",
                             value: list.tabname,
                         }, dbhook, function (reciveCallback) {
-                            GetData({
+                            exports.GetData({
                                 table: "mulitProducts",
                                 id: "productName",
                                 value: reciveCallback.data[0].ItemName,
@@ -716,8 +803,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                                         .update({
                                         isTaxEnabled: true,
                                     })
-                                        .then(function (data) {
-                                    });
+                                        .then(function (data) { });
                                 });
                             });
                         });
@@ -793,7 +879,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
             })
                 .then(function (data) {
                 var _this = this;
-                GetData({ table: "products", id: "group", value: props.oldData.group }, dbhook, function (callback) { return __awaiter(_this, void 0, void 0, function () {
+                exports.GetData({ table: "products", id: "group", value: props.oldData.group }, dbhook, function (callback) { return __awaiter(_this, void 0, void 0, function () {
                     var state, isProductsInstore, results;
                     var _this = this;
                     return __generator(this, function (_a) {
@@ -837,7 +923,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
             props.data.map(function (list) {
                 if (list.isMulity) {
                     num++;
-                    GetData({
+                    exports.GetData({
                         table: "products",
                         id: "ItemName",
                         value: list.ItemName,
@@ -877,7 +963,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                     }
                     break;
                 case "delivery":
-                    GetData({
+                    exports.GetData({
                         table: "products",
                         id: "ItemName",
                         value: props.data.selected.ItemName,
@@ -915,7 +1001,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                     break;
                 case "recived":
                     // console.log(props);
-                    GetData({ table: "Tabs", id: "tabname", value: props.data.selected.group }, dbhook, function (callback) {
+                    exports.GetData({ table: "Tabs", id: "tabname", value: props.data.selected.group }, dbhook, function (callback) {
                         if (callback.data.length === 0) {
                             dbhook("Tabs")
                                 .insert({
@@ -1015,7 +1101,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                                 isInstore: true,
                             })
                                 .then(function (data) { });
-                            GetData({
+                            exports.GetData({
                                 table: "products",
                                 id: "ItemName",
                                 value: props.data.selected.ItemName,
@@ -1137,7 +1223,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
         case "backUp":
             // console.log(props);
             props.data.tabs.map(function (tablist) {
-                GetData({
+                exports.GetData({
                     table: "Tabs",
                     id: "tabname",
                     value: tablist.tabname,
@@ -1158,7 +1244,7 @@ exports.HandelNewProducts = function (props, dbhook, sendCallback) {
                 });
             });
             props.data.productsList.map(function (productslist) {
-                GetData({
+                exports.GetData({
                     table: "products",
                     id: "ItemName",
                     value: productslist.ItemName,

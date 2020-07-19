@@ -40,9 +40,8 @@ const DialPad = (props) => {
     };
   }, []);
 
-  const handleKeyDown = (event) => {
-    // console.log(event.key);
-
+  const handleKeyDown = (event) => { 
+  
     inputRef.current.focus();
     if (event.key === "Enter") {
       handleSubmit();

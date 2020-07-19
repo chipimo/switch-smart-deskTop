@@ -45,8 +45,8 @@ var electron = require("electron");
 var mainWindow = electron_1.remote.getCurrentWindow();
 var socketIOClient = require("socket.io-client");
 var moment = require("moment");
-// const socketUrl = "http://localhost:3200";
-var socketUrl = "https://switch-smart.herokuapp.com/";
+var socketUrl = "http://localhost:3200";
+// const socketUrl = "https://switch-smart.herokuapp.com/";
 // Moment valz
 var date = new Date();
 var check = moment(date);
@@ -85,6 +85,7 @@ var Accapp = function (props) {
         bottom2: false,
         right: false,
     }), Drawerstate = _d[0], setDrawerState = _d[1];
+    var _e = React.useState(true), LoadOnce = _e[0], setLoadOnce = _e[1];
     var history = react_router_dom_1.useHistory();
     var toggleDrawer = function (side, open) { return function (event) {
         var _a;
@@ -95,45 +96,49 @@ var Accapp = function (props) {
         setDrawerState(__assign({}, Drawerstate, (_a = {}, _a[side] = open, _a)));
     }; };
     React.useEffect(function () {
-        mainWindow.maximize();
-        setTimeout(function () {
-            initiSocket();
-        }, 3000);
-        dataBase_1.default.HandleTheme({ _type: "getTheme" }, function (callback) {
-            props.dispatchEvent({ type: "Theme", theme: 'light' });
-        });
-        dataBase_1.default.HandleWorkperiods({ _type: "loadList" }, function (recivedCallback) {
-            if (recivedCallback)
-                recivedCallback.map(function (list) {
-                    if (list.dateEnded === "") {
-                        var initalData = {
-                            type: "STARTWORKPERIOD",
-                            id: list.id,
-                            dateStarted: list.dateStarted,
-                            dateStartedString: list.dateStartedString,
-                            date: list.date,
-                            time: list.time,
-                            timeEnded: list.timeEnded,
-                            dateEnded: list.dateEnded,
-                            dateEndedString: list.dateEndedString,
-                            note: list.note,
-                            userId: list.userId,
-                            department: list.department,
-                            departmentInfo: list.departmentInfo,
-                            workedFor: list.workedFor,
-                            year: list.year,
-                            month: list.month,
-                            week: list.week,
-                            day: list.day,
-                        };
-                        props.dispatchEvent(initalData);
-                    }
-                });
-            props.dispatchEvent({
-                type: "SETWORKPERIOD",
-                data: recivedCallback,
+        if (LoadOnce) {
+            setLoadOnce(false);
+            mainWindow.maximize();
+            setTimeout(function () {
+                initiSocket();
+            }, 3000);
+            dataBase_1.default.HandleTheme({ _type: "getTheme" }, function (callback) {
+                props.dispatchEvent({ type: "Theme", theme: "light" });
             });
-        });
+            dataBase_1.default.HandleWorkperiods({ _type: "loadList" }, function (recivedCallback) {
+                if (recivedCallback)
+                    recivedCallback.map(function (list) {
+                        if (list.dateEnded === "") {
+                            var initalData = {
+                                type: "STARTWORKPERIOD",
+                                id: list.id,
+                                dateStarted: list.dateStarted,
+                                dateStartedString: list.dateStartedString,
+                                date: list.date,
+                                time: list.time,
+                                timeEnded: list.timeEnded,
+                                dateEnded: list.dateEnded,
+                                dateEndedString: list.dateEndedString,
+                                note: list.note,
+                                userId: list.userId,
+                                department: list.department,
+                                departmentInfo: list.departmentInfo,
+                                workedFor: list.workedFor,
+                                year: list.year,
+                                month: list.month,
+                                week: list.week,
+                                day: list.day,
+                            };
+                            props.dispatchEvent(initalData);
+                        }
+                    });
+                props.dispatchEvent({
+                    type: "SETWORKPERIOD",
+                    data: recivedCallback,
+                });
+            });
+        }
+        // console.log(props.Updater);
     }, []);
     var initiSocket = function () {
         dataBase_1.default.CheckConfig();
@@ -335,6 +340,7 @@ function mapStateToProps(state) {
         User: state.User,
         Dep: state.Dep,
         WorkPeriod: state.WorkPeriod,
+        Updater: state.Updater,
     };
 }
 var mapDispatchToProps = function (dispatch) {

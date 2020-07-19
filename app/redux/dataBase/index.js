@@ -151,6 +151,7 @@ knex.schema.hasTable("products").then(function (exists) {
             table.decimal("totalTaxFinal").notNullable();
             table.decimal("totalTax").notNullable();
             table.string("time").notNullable();
+            table.boolean("isBackedUp").notNullable();
             table.timestamp("timestamp").defaultTo(knex.fn.now());
             table.timestamp("modified").defaultTo(knex.fn.now());
         })
@@ -176,6 +177,7 @@ knex.schema.hasTable("products").then(function (exists) {
             table.string("totalTaxFinal").notNullable();
             table.string("totalTax").notNullable();
             table.string("time").notNullable();
+            table.boolean("isBackedUp").notNullable();
             table.timestamp("timestamp").defaultTo(knex.fn.now());
             table.timestamp("modified").defaultTo(knex.fn.now());
         })
@@ -438,7 +440,7 @@ var AppDb = /** @class */ (function () {
                         .SocketConn.socket.emit("STARTWORKPEROID", props);
                 // Backup._UpdateWorkPeriod(
                 //   { _type: "start", data: reciveCallback },
-                //   (reciveCallback) => { 
+                //   (reciveCallback) => {
                 //   }
                 // );
                 callback(reciveCallback);
@@ -487,10 +489,9 @@ var AppDb = /** @class */ (function () {
                             var data = {
                                 group: items.group,
                                 recipes: [],
-                                colors: items.colors
+                                colors: items.colors,
                             };
-                            group_1.SetGroups(data, knex, function (getCallback) {
-                            });
+                            group_1.SetGroups(data, knex, function (getCallback) { });
                         });
                     });
                     store_1.default
@@ -581,9 +582,9 @@ var AppDb = /** @class */ (function () {
         Reports_1.HandleReports(props, knex, function (recivedCallback) {
             sendCallback(recivedCallback);
         });
-        this.UpdateToServer(props, function (callback) {
-            // console.log(callback);
-        });
+        // this.UpdateToServer(props, (callback) => {
+        //   // console.log(callback);
+        // });
     };
     // HandleGroup
     AppDb.prototype.HandleCustomers = function (props, sendCallback) {
@@ -621,6 +622,37 @@ var AppDb = /** @class */ (function () {
     };
     AppDb.prototype.HandlefinancialNumber = function (props, sendCallback) {
         financialReport_1.financialNumber(props, knex, function (reciveCallback) {
+            sendCallback(reciveCallback);
+        });
+    };
+    // Server BackUp
+    AppDb.prototype.HandleServerBackUp = function (props, sendCallback) {
+        if (props.tiketsIsDone) {
+            Products_1.GetData({
+                table: "sales_reports_totals",
+                id: "isBackedUp",
+                value: false,
+            }, knex, function (reciveCallback) {
+                sendCallback(reciveCallback);
+            });
+        }
+        else {
+            Products_1.GetData({
+                table: "sales_reports_tikets",
+                id: "isBackedUp",
+                value: false,
+            }, knex, function (reciveCallback) {
+                sendCallback(reciveCallback);
+            });
+        }
+    };
+    AppDb.prototype.GetTabelData = function (props, sendCallback) {
+        // console.log(props);
+        Products_1.GetData({
+            table: props.table,
+            id: props.id,
+            value: props.value,
+        }, knex, function (reciveCallback) {
             sendCallback(reciveCallback);
         });
     };

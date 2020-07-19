@@ -27,6 +27,7 @@ var SalesReports_1 = require("../reducers/reports/SalesReports");
 var LoggedInUsers_1 = require("../reducers/Users/LoggedInUsers");
 var productSync_1 = require("../reducers/Products/productSync");
 var productList_1 = require("../reducers/Products/productList");
+var Updater_1 = require("../reducers/Updater");
 var AllReducers = redux_2.combineReducers({
     Theme: Theme_1.default,
     SocketConn: sockets_1.default,
@@ -52,6 +53,7 @@ var AllReducers = redux_2.combineReducers({
     LoggedUsers: LoggedInUsers_1.default,
     ProductSync: productSync_1.default,
     ProductList: productList_1.default,
+    Updater: Updater_1.default,
 });
 var store = redux_1.createStore(AllReducers, redux_1.applyMiddleware(redux_thunk_1.default));
 var configureStore = function () {

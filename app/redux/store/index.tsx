@@ -25,6 +25,7 @@ import SalesReports from "../reducers/reports/SalesReports";
 import LoggedUsers from "../reducers/Users/LoggedInUsers";
 import ProductSync from "../reducers/Products/productSync";
 import ProductList from "../reducers/Products/productList";
+import Updater from "../reducers/Updater";
 
 const AllReducers = combineReducers({
   Theme: Theme,
@@ -51,6 +52,7 @@ const AllReducers = combineReducers({
   LoggedUsers: LoggedUsers,
   ProductSync: ProductSync,
   ProductList: ProductList,
+  Updater: Updater,
 });
 
 const store = createStore(AllReducers, applyMiddleware(thunk));

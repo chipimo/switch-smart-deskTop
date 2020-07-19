@@ -1713,6 +1713,47 @@
         "_type": "set",
         "data": null
       }
+    },
+    {
+      "id": "c44d7fd0-c988-11ea-871f-3f5e788eddda",
+      "type": "products",
+      "props": {
+        "name": "test product",
+        "group": {
+          "group": "group 1",
+          "colors": {
+            "textColor": "#fff",
+            "backgroundColor": "#3b3b3b"
+          }
+        },
+        "recipe": "",
+        "portion": [
+          {
+            "id": "input_0",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "4444"
+          },
+          {
+            "id": "input_1",
+            "barcode1": "",
+            "barcode2": "",
+            "barcode3": "",
+            "barcode4": "",
+            "barcode5": "",
+            "multiplier": "",
+            "alertOut": 1,
+            "price": "5555"
+          }
+        ],
+        "_type": "set",
+        "data": null
+      }
     }
   ]
 }

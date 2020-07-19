@@ -50,7 +50,7 @@ export const index = (props) => {
           if (list.dateEnded === "") {
             var initalData = {
               type: "STARTWORKPERIOD",
-              id:list.id,
+              id: list.id,
               dateStarted: list.dateStarted,
               dateStartedString: list.dateStartedString,
               date: list.date,
@@ -77,17 +77,21 @@ export const index = (props) => {
         data: recivedCallback,
       });
     });
-    if (props.WorkPeriod.isStarted) {
-      const now = moment(moment().format());
-      const started = moment(props.WorkPeriod.date);
 
-      const diff = now.diff(started);
-      const diffDuration = moment.duration(diff);
-
-      setDay(diffDuration.days());
-      setHours(diffDuration.hours());
-      setMinutes(diffDuration.minutes());
-    }
+    
+    setInterval(function () {
+      if (props.WorkPeriod.isStarted) {
+        const now = moment(moment().format());
+        const started = moment(props.WorkPeriod.date);
+  
+        const diff = now.diff(started);
+        const diffDuration = moment.duration(diff);
+  
+        setDay(diffDuration.days());
+        setHours(diffDuration.hours());
+        setMinutes(diffDuration.minutes());
+      }
+    }, 60 * 1000);
   }, []);
 
   const HandleEndWorkPeriod = () => {
@@ -135,9 +139,7 @@ export const index = (props) => {
             });
 
             setTimeout(() => {
-              socketStream(BackupCallback=>{
-
-              })
+              socketStream((BackupCallback) => {});
               alert(
                 "Work Period ends. Vist Reports section and create Work Period Reports"
               );

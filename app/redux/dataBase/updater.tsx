@@ -1,5 +1,6 @@
 import configureStore from "../store";
 import appDb from ".";
+import { GetData } from "../reducers/Products/Products";
 
 const uuidv4 = require("uuid/v4");
 const low = require("lowdb");
@@ -43,28 +44,49 @@ class Updater {
     }
   }
 
-  public _runUpates(data, callback) {
-    low(ConfigAdapter).then((tempdb) => {
-      const isWriten = tempdb.get("UpDates").value();
-      var product = tempdb.get("UpDates").find({ id: data.productKey }).value();
-      // console.log(product.props);
-      if (this._is_Conn().conn)
-        this._UpdateProducts(product, (reciveCallback) => {
-          tempdb
-            .get("UpDates")
-            .remove({ id: data.productKey })
-            .write()
-            .then(function () {
-              callback({
-                isDeleted: true,
-              });
+  private async _runUpates() {
+    var loaded = false;
+
+    appDb.HandleServerBackUp(false, (reciveCallback) => {
+      this._is_Conn().socket.emit("HANDEL_REPORTS_BACKUP", {
+        type: "tikets",
+        data: reciveCallback.data,
+      });
+
+      this._is_Conn().socket.on("HANDEL_REPORTS_BACKUP_ISDONE", (callback) => {
+        // configureStore.dispatch({
+        //   type: "UPDATINGSERVERDONE",
+        //   product:callback.Datetrack
+        // });
+        if (callback.type === "tikets")
+          appDb.HandelReports(
+            { _type: "ServerBackup", tabelId: "tikets", id: callback.id },
+            (callbackRecived) => {}
+          );
+
+        if (!loaded) {
+          loaded = true;
+          appDb.HandleServerBackUp(true, (reciveCallback) => {
+            // console.log(reciveCallback);
+            this._is_Conn().socket.emit("HANDEL_REPORTS_BACKUP", {
+              type: "totals",
+              data: reciveCallback.data,
             });
-        });
+          });
+        }
+
+        // else {
+        //   configureStore.dispatch({
+        //     type: "UPDATINGSERVER",
+        //     product:callback.Datetrack    ,
+        //   });
+        // }
+      });
     });
   }
 
   public isOnline() {
-    // if (this._is_Conn().conn) this._runUpates();
+    if (this._is_Conn().conn) this._runUpates();
   }
 
   public _UpdateWorkPeriod(props, sendCallback) {
@@ -72,6 +94,19 @@ class Updater {
       this._is_Conn().socket.emit("HANDEL_WORKPERIODS", props);
     } else {
     }
+  }
+
+  public _SyncProduct (props, sendCallback){
+    // console.log(props.ItemName);
+    
+      if(props.isMulity){
+        appDb.GetTabelData({table: "mulitProducts",
+        id: "productName",
+        value: props.ItemName,},reciveCallback=>{
+console.log(reciveCallback);
+
+        })
+      }
   }
 
   public _UpdateProducts(props, sendCallback) {
@@ -135,7 +170,7 @@ class Updater {
   }
 
   public _UpdateSalesRports(props, sendCallback) {
-    if (configureStore.getState().SocketConn.isConn) {     
+    if (configureStore.getState().SocketConn.isConn) {
       this._is_Conn().socket.emit("SALESREPORT", props);
       this._is_Conn().socket.on("SALESREPORTLIST", (callbackProps) => {
         sendCallback(callbackProps);

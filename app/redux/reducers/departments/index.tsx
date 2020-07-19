@@ -62,9 +62,9 @@ export const EditDepartment = (props, sendCallback) => {
           sendCallback({ set: false });
         }
       });
-  }
-  appDb.HandleDepartments(props,sendCallback=>{
-    
+    }
+    appDb.HandleDepartments(props,sendCallback=>{
+      sendCallback({ set: true });
   })
 };
 

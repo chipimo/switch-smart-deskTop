@@ -303,7 +303,11 @@ const ProductListTable = (props) => {
   };
 
   const UploadProduct = () => {
-    Backup._runUpates(Syncstate, (callback) => { });
+    // console.log(Syncstate);
+    
+    Backup._SyncProduct(Syncstate,callback=>{
+
+    })
   };
 
   const DeleteProductServer = (data) => {
@@ -435,10 +439,10 @@ const ProductListTable = (props) => {
                                         {row.sync ? (
                                           <div style={{ display: "flex" }}>
                                             <IconButton
-                                              // onClick={() => {
-                                              //   handleClick2(event, row);
-                                              //   setSyncState(row);
-                                              // }}
+                                              onClick={() => {
+                                                handleClick2(event, row);
+                                                setSyncState(row);
+                                              }}
                                               size="small"
                                             >
                                               <CheckIcon

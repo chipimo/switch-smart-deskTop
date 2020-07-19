@@ -79,4 +79,12 @@ exports.WorkPeriodList = function (dbhook, sendCallback) {
         sendCallback(data.reverse());
     });
 };
+exports.UpdateWorkPeriodTime = function (props, dbhook, sendCallback) {
+    console.log(props);
+    // dbhook("work_period")
+    // .update({})
+    //   .then(function (data) {
+    //     sendCallback(data.reverse());
+    //   });
+};
 //# sourceMappingURL=workPeriod.js.map

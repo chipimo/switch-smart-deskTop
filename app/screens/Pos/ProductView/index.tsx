@@ -1,6 +1,6 @@
 import React = require("react");
 import { connect } from "react-redux";
-import { Typography } from "@material-ui/core";
+import { Typography, TextField } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import { AppBar, IconButton, Paper, Modal, Button } from "@material-ui/core";
@@ -163,6 +163,7 @@ const useStyles = makeStyles((theme) => ({
 export const index = (props) => {
   const classes = useStyles();
   const theme = useTheme();
+  const inputRef = React.useRef();
 
   const [tabsList, setTabsList] = React.useState([]);
   const [IsScanned, setIsScanned] = React.useState(false);
@@ -183,6 +184,9 @@ export const index = (props) => {
   };
 
   React.useEffect(() => {
+    // inputRef.current.focus();
+    console.log("Done");
+
     if (props.Model.toClose === "mulit") {
       props.dispatchEvent({ type: "HANDELCLEAR" });
       handleCloseMulti();
@@ -261,14 +265,20 @@ export const index = (props) => {
   const handleError = (err) => {};
 
   const handleOnKeyPress = (key) => {
-    // console.log(key.length);
+    // console.log(key);
     if (key !== "Enter") {
       shotbarcode = shotbarcode + key;
       setshotbarcode(shotbarcode);
     }
-
+    
     if (key === "Enter") {
       handleScan(shotbarcode);
+      inputRef.current.focus();
+    }
+    
+    if (key === "Backspace") {
+      shotbarcode = shotbarcode.slice(0, -1);
+      setshotbarcode(shotbarcode);
     }
     // console.log(key);
   };
@@ -514,6 +524,7 @@ export const index = (props) => {
               color: props.Theme.theme === "light" ? "#3b3b3b" : "#AAAAAA",
             }}
           />
+          
           <Typography variant="caption" style={{ marginLeft: 10 }}>
             {shotbarcode}
           </Typography>

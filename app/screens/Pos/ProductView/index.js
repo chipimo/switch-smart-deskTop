@@ -167,6 +167,7 @@ var useStyles = styles_1.makeStyles(function (theme) {
 exports.index = function (props) {
     var classes = useStyles();
     var theme = styles_1.useTheme();
+    var inputRef = React.useRef();
     var _a = React.useState([]), tabsList = _a[0], setTabsList = _a[1];
     var _b = React.useState(false), IsScanned = _b[0], setIsScanned = _b[1];
     var _c = React.useState([]), productsList = _c[0], setProductsList = _c[1];
@@ -183,6 +184,8 @@ exports.index = function (props) {
         setValue(index);
     };
     React.useEffect(function () {
+        // inputRef.current.focus();
+        console.log("Done");
         if (props.Model.toClose === "mulit") {
             props.dispatchEvent({ type: "HANDELCLEAR" });
             handleCloseMulti();
@@ -245,13 +248,18 @@ exports.index = function (props) {
     };
     var handleError = function (err) { };
     var handleOnKeyPress = function (key) {
-        // console.log(key.length);
+        // console.log(key);
         if (key !== "Enter") {
             shotbarcode = shotbarcode + key;
             setshotbarcode(shotbarcode);
         }
         if (key === "Enter") {
             handleScan(shotbarcode);
+            inputRef.current.focus();
+        }
+        if (key === "Backspace") {
+            shotbarcode = shotbarcode.slice(0, -1);
+            setshotbarcode(shotbarcode);
         }
         // console.log(key);
     };

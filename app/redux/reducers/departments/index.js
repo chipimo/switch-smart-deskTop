@@ -65,6 +65,7 @@ exports.EditDepartment = function (props, sendCallback) {
         });
     }
     dataBase_1.default.HandleDepartments(props, function (sendCallback) {
+        sendCallback({ set: true });
     });
 };
 exports.GetDepartment = function (props, callback) {

@@ -54,7 +54,7 @@ var DepTable = function (props) {
     var _a = React.useState({
         columns: [
             { title: "Deparment Name", field: "dep_name" },
-            { title: "Number", field: "phone", type: "numeric" },
+            { title: "Number", field: "phone" },
             { title: "ShopNo", field: "shopNo" },
             { title: "Road", field: "road" },
             { title: "TPIN", field: "tpin" },

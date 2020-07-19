@@ -35,7 +35,6 @@ var DialPad = function (props) {
         };
     }, []);
     var handleKeyDown = function (event) {
-        // console.log(event.key);
         inputRef.current.focus();
         if (event.key === "Enter") {
             handleSubmit();

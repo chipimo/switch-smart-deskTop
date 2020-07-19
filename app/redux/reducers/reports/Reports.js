@@ -168,6 +168,9 @@ exports.HandleReports = function (props, dbhook, sendCallback) {
                 totalTaxFinal: props.data.totalTaxFinal,
                 totalTax: props.data.totalTax,
                 time: props.data.time,
+                isBackedUp: store_1.default.getState().SocketConn.isConn
+                    ? true
+                    : false,
             })
                 .then(function () {
                 dbhook
@@ -214,6 +217,9 @@ exports.HandleReports = function (props, dbhook, sendCallback) {
                             totalTaxFinal: props.data.totalTaxFinal,
                             totalTax: props.data.totalTax,
                             time: props.data.time,
+                            isBackedUp: store_1.default.getState().SocketConn.isConn
+                                ? true
+                                : false,
                         })
                             .then(function () { });
                     }
@@ -299,6 +305,10 @@ exports.HandleReports = function (props, dbhook, sendCallback) {
                                     totalTaxFinal: props.data.totalTaxFinal,
                                     totalTax: props.data.totalTax,
                                     time: props.data.time,
+                                    isBackedUp: store_1.default.getState().SocketConn
+                                        .isConn
+                                        ? true
+                                        : false,
                                 })
                                     .then(function () { });
                             }
@@ -359,6 +369,14 @@ exports.HandleReports = function (props, dbhook, sendCallback) {
                 });
             });
             break;
+        case "ServerBackup":
+            if (props.tabelId === "tikets")
+                dbhook("sales_reports_tikets")
+                    .where({ id: props.id })
+                    .update({
+                    isBackedUp: true,
+                })
+                    .then(function (data) { });
         default:
             break;
     }

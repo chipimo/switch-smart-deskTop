@@ -27,7 +27,7 @@ import {
 } from "../reducers/WorkPeriod/workPeriod";
 import Backup from "./updater";
 import { SetGroups, GetGroups, DeleteGroups } from "../reducers/groups/group";
-import { HandelNewProducts } from "../reducers/Products/Products";
+import { HandelNewProducts, GetData } from "../reducers/Products/Products";
 import { Purchases } from "../reducers/inventory/Inventoery";
 import { HandleReports } from "../reducers/reports/Reports";
 import { CustomersConfig } from "../reducers/customers";
@@ -175,6 +175,7 @@ knex.schema.hasTable("products").then(function (exists) {
           table.decimal("totalTaxFinal").notNullable();
           table.decimal("totalTax").notNullable();
           table.string("time").notNullable();
+          table.boolean("isBackedUp").notNullable();
           table.timestamp("timestamp").defaultTo(knex.fn.now());
           table.timestamp("modified").defaultTo(knex.fn.now());
         })
@@ -200,6 +201,7 @@ knex.schema.hasTable("products").then(function (exists) {
           table.string("totalTaxFinal").notNullable();
           table.string("totalTax").notNullable();
           table.string("time").notNullable();
+          table.boolean("isBackedUp").notNullable();
           table.timestamp("timestamp").defaultTo(knex.fn.now());
           table.timestamp("modified").defaultTo(knex.fn.now());
         })
@@ -296,7 +298,7 @@ class AppDb {
   // handleUpdates
   private UpdateToServer(props, callback) {
     if (props._type === "set") {
-      Backup._UpdateProducts(props, (recivecallback) => { });
+      Backup._UpdateProducts(props, (recivecallback) => {});
     }
     switch (props._data_type) {
       case "sales_reports":
@@ -352,7 +354,7 @@ class AppDb {
     });
   }
 
-  public  /*  */÷HandleDepartments(props, sendCallback) {
+  public HandleDepartments(props, sendCallback) {
     if (props.type === "check") {
       CheckDepartments("", (callback) => {
         sendCallback(callback);
@@ -393,7 +395,7 @@ class AppDb {
         sendCallback(reciveCallback);
       });
     } else if (props._type === "EditLocal") {
-      UpdateDepartment(props, knex, (callback) => { });
+      UpdateDepartment(props, knex, (callback) => {});
     }
   }
   // Handel Users
@@ -470,52 +472,37 @@ class AppDb {
   // Handel WorkPeriods
   public HandleWorkperiods(props, callback) {
     if (props._type === "start") {
-
       StartWorkPeriod(props, knex, (reciveCallback) => {
-
         if (configureStore.getState().SocketConn.isConn)
           configureStore
             .getState()
-            .SocketConn.socket.emit(
-              "STARTWORKPEROID",
-              props
-            );
+            .SocketConn.socket.emit("STARTWORKPEROID", props);
 
         // Backup._UpdateWorkPeriod(
         //   { _type: "start", data: reciveCallback },
-        //   (reciveCallback) => { 
+        //   (reciveCallback) => {
 
         //   }
         // );
         callback(reciveCallback);
       });
-
     } else if (props._type === "end") {
-
       EndWorkPeriod(props, knex, (reciveCallback) => {
         if (configureStore.getState().SocketConn.isConn)
           configureStore
             .getState()
-            .SocketConn.socket.emit(
-              "ENDWORKPEROID",
-              props
-            );
+            .SocketConn.socket.emit("ENDWORKPEROID", props);
 
         callback(reciveCallback);
       });
-
     } else if (props._type === "check") {
-
       CheckWorkPeriod(knex, (reciveCallback) => {
         callback(reciveCallback);
       });
-
     } else if (props._type === "loadList") {
-
       WorkPeriodList(knex, (reciveCallback) => {
         callback(reciveCallback);
       });
-
     }
   }
   /**
@@ -539,23 +526,16 @@ class AppDb {
           configureStore
             .getState()
             .SocketConn.socket.on("GROUPSLIST", (List) => {
-
-              List.data.map(items => {
-
+              List.data.map((items) => {
                 const data = {
                   group: items.group,
                   recipes: [],
-                  colors: items.colors
-                }
+                  colors: items.colors,
+                };
 
-                SetGroups(data, knex, getCallback => {
-
-                })
-
-              })
-
-
-            })
+                SetGroups(data, knex, (getCallback) => {});
+              });
+            });
 
           configureStore
             .getState()
@@ -587,13 +567,13 @@ class AppDb {
         if (receiveCallback) {
           if (receiveCallback.type === "add") {
             var data = { id: receiveCallback.productKey, props };
-            Backup._UpdateProducts(data, (receiveBackUpCallback) => { });
+            Backup._UpdateProducts(data, (receiveBackUpCallback) => {});
           } else if (receiveCallback.type === "add_to_store") {
-            Backup._UpdateInventory(props, (receiveBackUpCallback) => { });
+            Backup._UpdateInventory(props, (receiveBackUpCallback) => {});
           } else if (receiveCallback.type === "Add_filter") {
-            Backup._UpdateInventory(props, (receiveBackUpCallback) => { });
+            Backup._UpdateInventory(props, (receiveBackUpCallback) => {});
           } else if (receiveCallback.type === "remove_filter") {
-            Backup._UpdateInventory(props, (receiveBackUpCallback) => { });
+            Backup._UpdateInventory(props, (receiveBackUpCallback) => {});
           }
 
           sendCallback(receiveCallback);
@@ -633,15 +613,11 @@ class AppDb {
       SetGroups(props, knex, (reciveCallback) => {
         sendCallback(reciveCallback);
       });
-
-    }
-    else if (props._type === "get") {
+    } else if (props._type === "get") {
       GetGroups(props, knex, (reciveCallback) => {
         sendCallback(reciveCallback);
       });
-
-    }
-    else if (props._type === "deleteGroup") {
+    } else if (props._type === "deleteGroup") {
       if (configureStore.getState().SocketConn.isConn) {
         configureStore.getState().SocketConn.socket.emit("DELETEGROUP", props);
       }
@@ -656,11 +632,11 @@ class AppDb {
   public HandelReports(props, sendCallback) {
     HandleReports(props, knex, (recivedCallback) => {
       sendCallback(recivedCallback);
-    }); 
-
-    this.UpdateToServer(props, (callback) => {
-      // console.log(callback);
     });
+
+    // this.UpdateToServer(props, (callback) => {
+    //   // console.log(callback);
+    // });
   }
 
   // HandleGroup
@@ -708,6 +684,51 @@ class AppDb {
     financialNumber(props, knex, (reciveCallback) => {
       sendCallback(reciveCallback);
     });
+  }
+
+  // Server BackUp
+  public HandleServerBackUp(props, sendCallback) {
+    if (props.tiketsIsDone) {
+      GetData(
+        {
+          table: "sales_reports_totals",
+          id: "isBackedUp",
+          value: false,
+        },
+        knex,
+        (reciveCallback) => {
+          sendCallback(reciveCallback);
+        }
+      );
+    } else {
+      GetData(
+        {
+          table: "sales_reports_tikets",
+          id: "isBackedUp",
+          value: false,
+        },
+        knex,
+        (reciveCallback) => {
+          sendCallback(reciveCallback);
+        }
+      );
+    }
+  }
+
+  public GetTabelData(props, sendCallback) {
+    // console.log(props);
+    
+    GetData(
+      {
+        table: props.table,
+        id: props.id,
+        value: props.value,
+      },
+      knex,
+      (reciveCallback) => {
+        sendCallback(reciveCallback);
+      }
+    );
   }
 }
 
