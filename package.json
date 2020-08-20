@@ -37,7 +37,7 @@
     "@material-ui/lab": "^4.0.0-alpha.41",
     "@material-ui/pickers": "^3.2.10",
     "axios": "^0.19.2",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "ciqu-react-calendar": "^1.0.2",
     "clsx": "^1.1.0",
     "csv-stringify": "^5.5.0",
