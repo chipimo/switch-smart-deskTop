@@ -54,7 +54,7 @@
     "format-currency": "^1.0.0",
     "grommet": "^2.10.0",
     "invoice-number": "^1.0.6",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "keypress": "^0.2.1",
     "knex": "^0.21.1",
     "knex-db-manager": "^0.6.1",
