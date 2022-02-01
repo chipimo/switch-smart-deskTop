@@ -123,6 +123,6 @@
     "update-json-file": "^1.1.1",
     "user-home": "^2.0.0",
     "uuid": "^3.4.0",
-    "zip-local": "^0.3.4"
+    "zip-local": "^0.3.5"
   }
 }
