@@ -64,7 +64,7 @@
     "match-sorter": "^4.0.2",
     "material-table": "^1.57.2",
     "material-ui-popup-state": "^1.5.4",
-    "moment": "^2.25.3",
+    "moment": "^2.29.2",
     "mui-datatables": "^2.14.0",
     "namor": "^2.0.2",
     "node-abi": "^2.15.0",
