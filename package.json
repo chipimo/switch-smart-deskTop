@@ -56,7 +56,7 @@
     "invoice-number": "^1.0.6",
     "jspdf": "^1.5.3",
     "keypress": "^0.2.1",
-    "knex": "^0.21.1",
+    "knex": "^2.4.0",
     "knex-db-manager": "^0.6.1",
     "lodash": "^4.17.15",
     "lowdb": "^1.0.0",
